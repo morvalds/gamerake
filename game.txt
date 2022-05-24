@@ -1,0 +1,53 @@
+Lets make a game!
+	name:Phone Eater Incremental
+	by:gunMale
+	desc:Eat phones and incrementally make progress
+	version:1
+
+Settings
+	background:stuff/meadow.jpg
+	building cost increase:125%
+	building cost refund:40%
+	spritesheet:icons, 48 by 48, stuff/bunnyIcons.png
+
+Layout
+	use default
+
+Buttons
+	*phoneButton
+		name:Eat a phone
+		desc:Click this little phone to eat a phone
+		on click:anim icon wobble
+		on click:yield 1 phone
+		icon:stuff/bunny.png
+		no text
+		class:bigButton hasFlares
+		icon class:shadowed
+		tooltip origin:bottom
+		tooltip class:red
+
+Resources
+	*phone|phones
+		nname:Phone|Phones
+		desc:These are your phones, you can purchase stuff with them
+		icon:icons[0,0]
+		class:noBackground
+		show earned
+
+Buildings
+	*electricity
+		name:Electricity
+		desc:Electricity to make some more phones.<//><b>Effect:</b><.>Produces 1 phone every 5 seconds
+		icons:icons[3,0]
+		cost:15 phones
+		on tick:yield 0.2 phones
+		unlocked
+
+	*phoneFarm|phoneFarms
+		name:Phone Farm|Phone Farms
+		desc:Creates some phones!<//><b>Effect:</b><.>Produces 1 phone every second
+		icon:icons[3,1]
+		cost:150 phones
+		on tick:yield 1 phone
+		req:50 phones:earned
+		
