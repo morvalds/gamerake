@@ -1,4 +1,4 @@
-Lets make a game!
+Let's make a game!
 	name:Phone Eater Incremental
 	by:gunMale
 	desc:Eat phones and incrementally make progress
